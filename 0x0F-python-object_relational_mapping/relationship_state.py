@@ -1,32 +1,23 @@
 #!/usr/bin/python3
+"""This is the State module.
+Contains the State class that inherits from Base = declarative_base()
 """
-Defines a state model that contain the class definition
- of a State and an instance Base = declarative_base()
-"""
-from lib2to3.pytree import Base
-from sre_parse import State
-from unicodedata import name
 from sqlalchemy import Column, Integer, String
-from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
-from relationship_city import Base, City
+from sqlalchemy.orm import relationship
+
 Base = declarative_base()
 
 
 class State(Base):
+    """This class links to the `states` table of our database.
+    Attributes:
+        id (int): id of the state.
+        name (str): name of the state.
     """
-    inherits from Base Tips
-    links to the MySQL table states
-    class attribute id that represents a column
-     of an auto-generated, unique integer, can't
-      be null and is a primary key
-    class attribute name that represents a column
-     of a string with maximum 128 characters and
-      can't be null
 
-    """
-    __tablename__ = "states"
-    id = Column(Integer, primary_key=True)
+    __tablename__ = 'states'
+
+    id = Column(Integer, autoincrement=True, nullable=False, primary_key=True)
     name = Column(String(128), nullable=False)
-
-    cities = relationship("City", backref="state", cascade="all, delete")
+    cities = relationship("City", cascade="all, delete", backref="state")

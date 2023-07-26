@@ -1,7 +1,10 @@
 #!/usr/bin/python3
-"""Square class to represent a square"""
+"""Square module.
+This module contains a class that defines a square.
+"""
 
 
 class Square():
-    """Empty class"""
+    """Defines a square."""
+
     pass

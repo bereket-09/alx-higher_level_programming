@@ -1,16 +1,31 @@
 #!/usr/bin/python3
-"""Module containing a dummy adder function for testing"""
+"""
+This is the add_integer module.
+This module supplies one function, add_integer().
+"""
 
 
 def add_integer(a, b=98):
-    """ adds integers
-        Arguments:
-        @a: first integer
-        @b: second integer, defaults to 98 if not given
     """
+    Return the addition of a and b.
+    Args:
+        a (int, float): the first value.
+        b (int, float): the second value.
+    """
+    if type(a) in [int, float]:
+        try:
+            a = int(a)
+        except:
+            raise TypeError('a must be an integer')
+    else:
+        raise TypeError('a must be an integer')
 
-    if type(a) not in [int, float]:
-        raise TypeError("a must be an integer")
-    if type(b) not in [int, float]:
-        raise TypeError("b must be an integer")
-    return int(a) + int(b)
+    if type(b) in [int, float]:
+        try:
+            b = int(b)
+        except:
+            raise TypeError('b must be an integer')
+    else:
+        raise TypeError('b must be an integer')
+
+    return a + b

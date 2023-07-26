@@ -1,14 +1,16 @@
 #!/usr/bin/python3
-""" Working on oop with python """
+"""Square module.
+This module contains a class that defines a square and init method that
+sets its size.
+"""
 
 
 class Square():
-    """Class representing a square"""
+    """Defines a square."""
 
     def __init__(self, size):
-        """ initialize the class
-
+        """Sets the necessary attributes for the Square object.
         Args:
-           size (int): size of the square
+            size (int): the size of one edge of the square.
         """
         self.__size = size

@@ -1,3 +1,6 @@
-$('DIV#update_header').click(()=>{
-    $('HEADER').text('New Header!!!');
+'use strict';
+$(() => {
+  $('DIV#update_header').click(() => {
+    $('header').text('New Header!!!');
+  });
 });
